@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const AddUserForm = props => {
 
     const initialFormState = {name: '', username: ''}
-
     const [user, setUser] = useState(initialFormState)
 
     const handleInputChange = event => {

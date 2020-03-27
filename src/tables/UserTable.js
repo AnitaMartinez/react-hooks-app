@@ -1,7 +1,8 @@
 import React from 'react'
 
 const UserTable = props => {
-    const { users } = props
+    const { users, onDeleteUser, onEditUser } = props
+
     return (
         <table>
             <thead>
@@ -12,14 +13,24 @@ const UserTable = props => {
             </tr>
             </thead>
             <tbody>
-            {props.users.length > 0 ? (
-                props.users.map(user => (
+            {users.length > 0 ? (
+                users.map(user => (
                 <tr key={user.id}>
                     <td>{user.name}</td>
                     <td>{user.username}</td>
                     <td>
-                    <button className="button muted-button">Edit</button>
-                    <button className="button muted-button">Delete</button>
+                    <button
+                        className="button muted-button"
+                        onClick={() => onEditUser(user)}
+                    >
+                        Edit
+                    </button>
+                    <button
+                        onClick={() => onDeleteUser(user)}
+                        className="button muted-button"
+                    >
+                        Delete
+                    </button>
                     </td>
                 </tr>
                 ))
