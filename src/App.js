@@ -24,6 +24,7 @@ const App = () => {
   }
 
   const deleteUser = user => {
+    setEditingMode(false)
     const updatedUsers = users.filter(({id}) => id !== user.id)
     setUsers(updatedUsers)
   }
