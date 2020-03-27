@@ -48,7 +48,6 @@ const App = () => {
           {
             editingMode ? (
               <EditUserForm
-                editingMode={editingMode}
                 setEditing={setEditingMode}
                 currentUser={currentUser}
                 updateUser={updateUser}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const AddUserForm = props => {
 
@@ -37,6 +38,11 @@ const AddUserForm = props => {
             <button>Add new user</button>
         </form>
     )
+}
+
+
+AddUserForm.propTypes = {
+    onAddUser: PropTypes.func.isRequired,
 }
 
 export default AddUserForm

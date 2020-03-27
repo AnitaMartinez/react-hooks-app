@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 const EditUserForm = props => {
-  const { setEditing, currentUser } = props
+  const { setEditing, currentUser, updateUser } = props
   const [user, setUser] = useState(currentUser)
 
   useEffect(() => {
@@ -19,8 +20,7 @@ const EditUserForm = props => {
     <form
       onSubmit={event => {
         event.preventDefault()
-
-        props.updateUser(user.id, user)
+        updateUser(user.id, user)
       }}
     >
       <label>Name</label>
@@ -33,6 +33,12 @@ const EditUserForm = props => {
       </button>
     </form>
   )
+}
+
+EditUserForm.propTypes = {
+  currentUser: PropTypes.object.isRequired,
+  setEditing: PropTypes.func.isRequired,
+  updateUser: PropTypes.func.isRequired,
 }
 
 export default EditUserForm

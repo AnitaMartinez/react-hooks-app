@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const UserTable = props => {
     const { users, onDeleteUser, onEditUser } = props
@@ -42,6 +43,12 @@ const UserTable = props => {
     </tbody>
         </table>
     )
+}
+
+UserTable.propTypes = {
+    users: PropTypes.array.isRequired,
+    onDeleteUser: PropTypes.func.isRequired,
+    onEditUser: PropTypes.func.isRequired,
 }
 
 export default UserTable
